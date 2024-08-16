@@ -1,0 +1,97 @@
+---
+
+testbed:
+  credentials:
+    default:
+      username: d.dinh
+      password: T@0khongbiet042024
+
+devices:
+  vnhchm01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.148.255.100
+  tlbkok01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.135.253.1
+  cnhong01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.124.253.1
+  inhdrb01cr01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.150.253.1
+  inmumb01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.151.253.1
+  jposka01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.138.253.1
+  jptkyo01cr01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.121.253.1
+  krseul01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.128.253.1
+  ausydn01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.126.253.1
+  ausydn02as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.144.253.1
+  sgsing01cr01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.127.253.1
