@@ -49,24 +49,25 @@ class DisplayBgpNeighbors(aetest.Testcase):
 
         with open("apac_sda_bgp_neighbors.txt", "w") as fh:
             for device, bgp_info in bgp_neighbors.items():
-                fh.write(f"******** BGP neighbors of {device} ********\n")
-                fh.write("VRF Name            Neighbor IP         Uptime\n")
-                fh.write("----------------------------------------------\n")
+                fh.write(f"****************** BGP neighbors of {device} ******************\n")
+                fh.write("VRF Name            Neighbor IP         Uptime      State/PfxRcd\n")
+                fh.write("----------------------------------------------------------------\n")
                 bgp_status = []
                 for vrf_name, vrf_data in bgp_info['vrf'].items():
                     log.info(f"Found VRF: {vrf_name}")            
                     for neighbor_IP, neighbor_info in vrf_data['neighbor'].items():
                         uptime = neighbor_info['address_family']['vpnv4']['up_down']
+                        state_pfxrcd = neighbor_info['address_family']['vpnv4']['state_pfxrcd']
                         # Collect VRF, neighbor IP, and uptime/status in to a list
-                        bgp_status.append(f"{vrf_name}\t{neighbor_IP}\t{uptime}")
-        # Output the status of BGP neighbors    
+                        bgp_status.append(f"{vrf_name}\t{neighbor_IP}\t{uptime}\t{state_pfxrcd}")
+        # Output the status of BGP neighbors
                 for line in bgp_status:
-                    vrf_name, neighbor_IP, uptime = line.split('\t')
-                    if uptime == 'never':
-                        fh.write(f"{vrf_name.ljust(20)}{neighbor_IP.ljust(16)}{uptime.rjust(10)} <==== Need to check\n")
+                    vrf_name, neighbor_IP, uptime, state_pfxrcd = line.split('\t')
+                    if state_pfxrcd != '1':
+                        fh.write(f"{vrf_name.ljust(20)}{neighbor_IP.ljust(20)}{uptime.ljust(12)}{state_pfxrcd.rjust(10)} <==== Need to check\n")
                     else:
-                        fh.write(f"{vrf_name.ljust(20)}{neighbor_IP.ljust(16)}{uptime.rjust(10)}\n")
-                fh.write("===============================================")
+                        fh.write(f"{vrf_name.ljust(20)}{neighbor_IP.ljust(20)}{uptime.ljust(12)}{state_pfxrcd.rjust(10)}\n")
+                fh.write("===================================================================")
                 fh.write(2*"\n")
 
 #TODO: Disconnect to device
@@ -86,7 +87,3 @@ if __name__ == ("__main__"):
     args, unknown = parser.parse_known_args()
 
     aetest.main(**vars(args))
-
-    
-
-
