@@ -15,6 +15,22 @@ devices:
       cli:
         protocol: ssh
         ip: 10.148.255.100
+  twtaip01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.132.253.1
+  twtaic01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.140.253.1
   tlbkok01as01:
     type: switch
     os: iosxe
@@ -47,6 +63,14 @@ devices:
       cli:
         protocol: ssh
         ip: 10.151.253.1
+  inhdrb02cr01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.152.253.1
   jposka01as01:
     type: switch
     os: iosxe
@@ -63,6 +87,14 @@ devices:
       cli:
         protocol: ssh
         ip: 10.121.253.1
+  jpykhm01cr01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.143.253.1
   krseul01as01:
     type: switch
     os: iosxe
@@ -95,3 +127,59 @@ devices:
       cli:
         protocol: ssh
         ip: 10.127.253.1
+  cnwhan01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.134.253.1
+  cnshan02cr01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.122.253.1
+  cnnanj01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.141.253.1
+  cnhngz01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.137.253.1
+  cngngz01as03:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.123.253.1
+  cnchen01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.131.253.1
+  cnbjng01as01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.120.253.1
