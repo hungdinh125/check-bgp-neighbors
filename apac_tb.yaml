@@ -183,3 +183,11 @@ devices:
       cli:
         protocol: ssh
         ip: 10.120.253.1
+  cnchen02cr01:
+    type: switch
+    os: iosxe
+    platform: cat9k
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.133.253.1
